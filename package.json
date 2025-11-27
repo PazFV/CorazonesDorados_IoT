@@ -7,13 +7,15 @@
     "@angular/compiler": "21.0.1",
     "@angular/core": "21.0.1",
     "@angular/platform-browser": "21.0.1",
-    "@angular/cli": "^21.0.0",
     "@google/genai": "1.30.0",
     "rxjs": "7.8.2"
   },
   "devDependencies": {
     "@angular/build": "21.0.1",
-    "@angular/cli": "^21.0.0",
+    // 💡 SOLUCIÓN: Añadimos el paquete que faltaba en el error.
+    "@angular/compiler-cli": "21.0.1", 
+    // Movimos @angular/cli a devDependencies
+    "@angular/cli": "^21.0.0", 
     "typescript": "^5.9.0"
   },
   "overrides": {
