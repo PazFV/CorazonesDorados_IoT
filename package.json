@@ -12,9 +12,9 @@
   },
   "devDependencies": {
     "@angular/build": "21.0.1",
-    "typescript": "5.9.1"
+    "typescript": "^5.9.0"
   },
   "overrides": {
-    "typescript": "5.9.1"
+    "typescript": "^5.9.0"
   }
 }
