@@ -1,0 +1,35 @@
+
+@if (data(); as patientData) {
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+    <!-- Resident Card -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center">
+       <div class="text-sm font-medium text-slate-500 dark:text-slate-400">Residente</div>
+       <div class="text-xl font-bold text-teal-600 dark:text-teal-400 mt-1 truncate">{{ patientData.patientid }}</div>
+    </div>
+    
+    <!-- Steps Card -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center">
+       <div class="text-sm font-medium text-slate-500 dark:text-slate-400">Pasos Hoy</div>
+       <div class="text-2xl font-bold text-slate-700 dark:text-slate-200 mt-1">{{ patientData.dailystepcount }}</div>
+    </div>
+
+    <!-- Movement Status Card -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center">
+       <div class="text-sm font-medium text-slate-500 dark:text-slate-400">Estado Actual</div>
+        <div class="flex items-center gap-2 mt-1">
+          <span 
+            class="h-3 w-3 rounded-full"
+            [class.bg-green-500]="patientData.ismoving"
+            [class.bg-amber-500]="!patientData.ismoving">
+          </span>
+          <span class="text-lg font-semibold text-slate-700 dark:text-slate-200">{{ movementStatusText() }}</span>
+        </div>
+    </div>
+
+    <!-- Activity Level Card -->
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center">
+       <div class="text-sm font-medium text-slate-500 dark:text-slate-400">Nivel de Actividad</div>
+       <div class="text-lg font-semibold text-slate-700 dark:text-slate-200 mt-1">{{ activityLevelText() }}</div>
+    </div>
+  </div>
+}

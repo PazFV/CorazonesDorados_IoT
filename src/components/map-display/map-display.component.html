@@ -1,0 +1,23 @@
+
+<div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 w-full h-full">
+  <h3 class="text-xl font-bold text-slate-700 dark:text-slate-200 mb-4">Ubicación Actual</h3>
+  <div class="aspect-video bg-slate-100 dark:bg-slate-700/50 rounded-lg p-4 grid grid-cols-3 grid-rows-3 gap-2">
+    @for (room of rooms; track room.name) {
+      <div 
+        class="rounded-md flex items-center justify-center text-sm font-semibold border-2 transition-all duration-300 ease-in-out"
+        [style.grid-area]="room.gridArea"
+        [class.bg-teal-500]="currentRoom() === room.name"
+        [class.text-white]="currentRoom() === room.name"
+        [class.border-teal-500]="currentRoom() === room.name"
+        [class.bg-slate-200]="currentRoom() !== room.name"
+        [class.dark:bg-slate-600]="currentRoom() !== room.name"
+        [class.text-slate-600]="currentRoom() !== room.name"
+        [class.dark:text-slate-300]="currentRoom() !== room.name"
+        [class.border-transparent]="currentRoom() !== room.name"
+        [class.scale-105]="currentRoom() === room.name"
+        >
+        {{ room.label }}
+      </div>
+    }
+  </div>
+</div>
